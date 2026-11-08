@@ -1,6 +1,8 @@
 export const name = "Syed Ali";
 export const url = "https://syedalihax.com";
 export const email = "hello@syedalihax.com";
+export const phone = "+92 318 3179797";
+export const whatsappUrl = "https://wa.me/923183179797";
 export const formspreeEndpoint = "xyeeaaqq";
 export const positioning = "I fix and build websites small businesses can actually run.";
 export const location = "Quetta, Pakistan";

@@ -3,7 +3,7 @@ import ContactForm from "../../components/ContactForm";
 import Footer from "../../components/Footer";
 import Nav from "../../components/Nav";
 import Reveal from "../../components/Reveal";
-import { email, url } from "../../lib/site";
+import { email, phone, url, whatsappUrl } from "../../lib/site";
 
 const title = "Contact | Syed Ali — Web Developer";
 const description =
@@ -41,10 +41,21 @@ export default function ContactPage() {
             </h1>
             <p className="mt-6 max-w-[62ch] text-body leading-relaxed text-muted">
               Email me directly at{" "}
-              <a className="text-ink underline decoration-rule underline-offset-4" href={`mailto:${email}`}>
+              <a
+                className="text-ink underline decoration-rule underline-offset-4"
+                href={`mailto:${email}`}
+              >
                 {email}
               </a>{" "}
-              or send a short description using the form.
+              or message me on{" "}
+              <a
+                className="text-ink underline decoration-rule underline-offset-4"
+                href={whatsappUrl}
+                aria-label={`WhatsApp: ${phone}`}
+              >
+                WhatsApp at {phone}
+              </a>
+              , or send a short description using the form.
             </p>
           </section>
         </Reveal>

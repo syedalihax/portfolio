@@ -1,4 +1,4 @@
-import { email, name } from "../lib/site";
+import { email, name, phone, whatsappUrl } from "../lib/site";
 
 export default function Footer() {
   return (
@@ -7,12 +7,21 @@ export default function Footer() {
         <p className="font-mono text-meta text-muted">
           {name} · Web Developer
         </p>
-        <a
-          href={`mailto:${email}`}
-          className="font-mono text-meta text-ink"
-        >
-          {email}
-        </a>
+        <div className="flex flex-col gap-3 sm:flex-row sm:gap-6">
+          <a
+            href={`mailto:${email}`}
+            className="font-mono text-meta text-ink"
+          >
+            {email}
+          </a>
+          <a
+            href={whatsappUrl}
+            className="font-mono text-meta text-ink"
+            aria-label={`WhatsApp: ${phone}`}
+          >
+            WhatsApp · {phone}
+          </a>
+        </div>
       </div>
     </footer>
   );

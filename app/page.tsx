@@ -12,8 +12,10 @@ import {
   location,
   name,
   offer,
+  phone,
   positioning,
   url,
+  whatsappUrl,
 } from "../lib/site";
 
 const title = "Web Developer | Syed Ali";
@@ -232,6 +234,13 @@ export default function HomePage() {
                   className="mt-5 inline-block font-mono text-meta text-ink"
                 >
                   {email}
+                </a>
+                <a
+                  href={whatsappUrl}
+                  className="mt-3 block font-mono text-meta text-ink"
+                  aria-label={`WhatsApp: ${phone}`}
+                >
+                  WhatsApp · {phone}
                 </a>
               </div>
               <div className="lg:col-span-6 lg:col-start-6">
