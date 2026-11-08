@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import { MotionConfig } from "framer-motion";
+import { Analytics } from "@vercel/analytics/next";
 import {
   faqSchema,
   personSchema,
@@ -67,6 +68,7 @@ export default function RootLayout({
           />
         ))}
         <MotionConfig reducedMotion="user">{children}</MotionConfig>
+        <Analytics />
       </body>
     </html>
   );
