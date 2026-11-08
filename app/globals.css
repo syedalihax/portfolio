@@ -11,8 +11,8 @@
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
 
-  --text-display: clamp(2.6rem, 6.2vw, 5.6rem);
-  --text-h2: clamp(1.7rem, 3.2vw, 2.6rem);
+  --text-display: clamp(3rem, 8.5vw, 8rem);
+  --text-h2: clamp(2rem, 4vw, 3.4rem);
   --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
   --text-meta: 0.78rem;
 

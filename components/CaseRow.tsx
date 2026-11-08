@@ -30,7 +30,7 @@ export default function CaseRow({
 }: CaseRowProps) {
   return (
     <Reveal delay={delay}>
-      <article className="grid grid-cols-1 items-start gap-8 border-t border-rule py-8 md:grid-cols-[7fr_4fr] md:gap-12 md:py-10">
+      <article className="grid grid-cols-1 items-start gap-8 border-t border-rule py-8 md:py-10 lg:grid-cols-[40%_55%] lg:gap-x-[5%]">
         <div className="grid gap-5 sm:grid-cols-[3rem_minmax(0,1fr)]">
           <p className="font-mono text-meta text-muted">{number}</p>
           <div>
@@ -46,12 +46,17 @@ export default function CaseRow({
             </p>
           </div>
         </div>
-        <a href={href} aria-label={`Read the ${name} case study`}>
+        <a
+          href={href}
+          aria-label={`Read the ${name} case study`}
+          className="block min-w-0"
+        >
           <Image
             src={image}
             alt={imageAlt}
             width={imageWidth}
             height={imageHeight}
+            loading={number === "01" ? "eager" : "lazy"}
             className="h-auto w-full rounded-sm"
           />
         </a>

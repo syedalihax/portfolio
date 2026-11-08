@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
+import Reveal from "../../components/Reveal";
 import { url } from "../../lib/site";
 
 const title = "About | Syed Ali — Web Developer";
 const description =
-  "About Syed Ali, a web developer based in Quetta, Pakistan, working remotely across time zones.";
+  "Syed Ali builds and fixes websites, working remotely from Quetta, Pakistan, across time zones.";
 
 export const metadata: Metadata = {
   title,
@@ -20,5 +23,45 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return null;
+  return (
+    <div className="min-h-screen bg-paper text-ink">
+      <header className="border-b border-rule">
+        <Nav />
+      </header>
+      <main className="mx-auto w-full max-w-[1180px] px-6">
+        <article>
+          <Reveal>
+            <header className="py-section">
+              <p className="font-mono text-meta text-muted">About</p>
+              <h1 className="mt-4 font-display text-display leading-[0.98] text-ink">
+                How I work
+              </h1>
+            </header>
+          </Reveal>
+          <div className="max-w-[62ch] pb-section">
+            <Reveal>
+              <p className="border-t border-rule py-6 text-body leading-relaxed text-ink">
+                I fix existing websites and build small-business sites with
+                Next.js, TypeScript and Tailwind CSS, then deploy them and hand
+                over the repository.
+              </p>
+            </Reveal>
+            <Reveal delay={0.06}>
+              <p className="border-t border-rule py-6 text-body leading-relaxed text-ink">
+                I am based in Quetta, Pakistan, and work remotely with clients
+                across time zones. I reply within one working day.
+              </p>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <p className="border-y border-rule py-6 text-body leading-relaxed text-ink">
+                I agree on the scope in writing before I start, quote a fixed
+                price for that scope, and do not require a retainer.
+              </p>
+            </Reveal>
+          </div>
+        </article>
+      </main>
+      <Footer />
+    </div>
+  );
 }

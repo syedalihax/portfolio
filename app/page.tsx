@@ -92,7 +92,10 @@ export default function HomePage() {
       </header>
       <main className="mx-auto w-full max-w-[1180px] px-6">
         <Reveal>
-          <section aria-labelledby="home-title" className="py-section">
+          <section
+            aria-labelledby="home-title"
+            className="pt-16 pb-section"
+          >
             <h1
               id="home-title"
               className="font-display text-display leading-[0.98] text-ink"
@@ -104,17 +107,6 @@ export default function HomePage() {
             </p>
             <p className="mt-4 font-mono text-meta text-muted">
               {location} · {availability}
-            </p>
-          </section>
-        </Reveal>
-
-        <Reveal>
-          <section
-            aria-label="Location and availability"
-            className="border-t border-rule py-4"
-          >
-            <p className="font-mono text-meta text-muted">
-              Web developer · Quetta, PK · remote
             </p>
           </section>
         </Reveal>
