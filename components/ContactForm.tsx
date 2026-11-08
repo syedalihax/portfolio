@@ -1,13 +1,61 @@
 "use client";
 
-const formspreeEndpoint = "https://formspree.io/f/REPLACE_WITH_FORM_ID";
+import { useState, type FormEvent } from "react";
+import { formspreeEndpoint } from "../lib/site";
 
 export default function ContactForm() {
+  const [isSending, setIsSending] = useState(false);
+  const [feedback, setFeedback] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (isSending) return;
+
+    const form = event.currentTarget;
+    setIsSending(true);
+    setFeedback(null);
+
+    try {
+      const response = await fetch(
+        `https://formspree.io/f/${formspreeEndpoint}`,
+        {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error(`Formspree returned status ${response.status}`);
+      }
+
+      form.reset();
+      setFeedback({
+        type: "success",
+        message: "Your message has been sent. I reply within one working day.",
+      });
+    } catch (error) {
+      if (!(error instanceof Error)) throw error;
+
+      setFeedback({
+        type: "error",
+        message:
+          "Your message could not be sent. Please email me directly instead.",
+      });
+    } finally {
+      setIsSending(false);
+    }
+  }
+
   return (
     <form
-      action={formspreeEndpoint}
+      action={`https://formspree.io/f/${formspreeEndpoint}`}
       method="POST"
-      className="max-w-[62ch] border-t border-rule"
+      onSubmit={handleSubmit}
+      className="w-full border-t border-rule"
     >
       <div className="grid gap-2 border-b border-rule py-5">
         <label htmlFor="contact-name" className="font-mono text-meta text-ink">
@@ -59,11 +107,23 @@ export default function ContactForm() {
         Name, a valid email address and a message are required before the form
         can be sent.
       </p>
+      {feedback && (
+        <p
+          role={feedback.type === "error" ? "alert" : "status"}
+          aria-live="polite"
+          className={`mt-4 text-body leading-relaxed ${
+            feedback.type === "success" ? "text-ink" : "text-muted"
+          }`}
+        >
+          {feedback.message}
+        </p>
+      )}
       <button
         type="submit"
-        className="mt-5 border border-ink px-5 py-3 font-mono text-meta text-ink"
+        disabled={isSending}
+        className="mt-5 border border-ink px-5 py-3 font-mono text-meta text-ink disabled:cursor-wait disabled:opacity-60"
       >
-        Send message
+        {isSending ? "Sending…" : "Send message"}
       </button>
     </form>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import CaseRow from "../components/CaseRow";
+import ContactForm from "../components/ContactForm";
 import Faq from "../components/Faq";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
@@ -94,7 +95,7 @@ export default function HomePage() {
         <Reveal>
           <section
             aria-labelledby="home-title"
-            className="pt-16 pb-section"
+            className="py-[calc(var(--spacing-section)/2)]"
           >
             <h1
               id="home-title"
@@ -113,7 +114,7 @@ export default function HomePage() {
 
         <section
           aria-labelledby="work-title"
-          className="py-section"
+          className="py-[calc(var(--spacing-section)/2)]"
         >
           <Reveal>
             <h2
@@ -133,7 +134,10 @@ export default function HomePage() {
           <div className="border-t border-rule" />
         </section>
 
-        <section aria-labelledby="services-title" className="py-section">
+        <section
+          aria-labelledby="services-title"
+          className="py-[calc(var(--spacing-section)/2)]"
+        >
           <Reveal>
             <h2
               id="services-title"
@@ -142,24 +146,25 @@ export default function HomePage() {
               What I do
             </h2>
           </Reveal>
-          <div>
-            {services.map((service, index) => (
-              <Reveal key={service.label} delay={index * 0.06}>
-                <div className="grid gap-3 border-t border-rule py-5 sm:grid-cols-[4fr_7fr] sm:gap-8">
-                  <p className="font-mono text-meta text-muted">
-                    {service.label}
-                  </p>
-                  <p className="max-w-[62ch] text-body leading-relaxed text-ink">
-                    {service.description}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-            <div className="border-t border-rule" />
-          </div>
+          {services.map((service, index) => (
+            <Reveal key={service.label} delay={index * 0.06}>
+              <div className="grid gap-3 border-t border-rule py-5 sm:grid-cols-[4fr_7fr] sm:gap-8">
+                <p className="font-mono text-meta text-muted">
+                  {service.label}
+                </p>
+                <p className="max-w-[62ch] text-body leading-relaxed text-ink">
+                  {service.description}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+          <div className="border-t border-rule" />
         </section>
 
-        <section aria-labelledby="offer-title" className="py-section">
+        <section
+          aria-labelledby="offer-title"
+          className="py-[calc(var(--spacing-section)/2)]"
+        >
           <Reveal>
             <h2
               id="offer-title"
@@ -195,7 +200,10 @@ export default function HomePage() {
           </dl>
         </section>
 
-        <section aria-labelledby="faq-title" className="py-section">
+        <section
+          aria-labelledby="faq-title"
+          className="py-[calc(var(--spacing-section)/2)]"
+        >
           <Reveal>
             <h2 id="faq-title" className="mb-8 font-display text-h2 text-ink">
               Questions
@@ -209,20 +217,27 @@ export default function HomePage() {
         <Reveal>
           <section
             aria-labelledby="contact-title"
-            className="border-t border-rule py-section"
+            className="border-t border-rule py-[calc(var(--spacing-section)/2)]"
           >
-            <h2 id="contact-title" className="font-display text-h2 text-ink">
+            <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+              <div className="lg:col-span-4">
+                <h2 id="contact-title" className="font-display text-h2 text-ink">
               Contact
-            </h2>
-            <p className="mt-4 max-w-[62ch] text-body leading-relaxed text-muted">
-              For a website fix or build, email me.
-            </p>
-            <a
-              href={`mailto:${email}`}
-              className="mt-5 inline-block font-mono text-meta text-ink"
-            >
-              {email}
-            </a>
+                </h2>
+                <p className="mt-4 max-w-[62ch] text-body leading-relaxed text-muted">
+                  I reply within one working day.
+                </p>
+                <a
+                  href={`mailto:${email}`}
+                  className="mt-5 inline-block font-mono text-meta text-ink"
+                >
+                  {email}
+                </a>
+              </div>
+              <div className="lg:col-span-6 lg:col-start-6">
+                <ContactForm />
+              </div>
+            </div>
           </section>
         </Reveal>
       </main>
