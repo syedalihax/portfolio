@@ -7,6 +7,7 @@ export const personSchema = {
   jobTitle: "Web Developer",
   url,
   email,
+  image: `${url}/photos/syed-ali.webp`,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Quetta",
