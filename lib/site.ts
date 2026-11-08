@@ -1,7 +1,7 @@
 export const name = "Syed Ali";
 export const url = "https://syedalihax.com";
 export const email = "hello@syedalihax.com";
-export const formspreeEndpoint = "REPLACE_ME";
+export const formspreeEndpoint = "xyeeaaqq";
 export const positioning = "I fix and build websites small businesses can actually run.";
 export const location = "Quetta, Pakistan";
 export const availability = "Remote worldwide · replies within one working day";
