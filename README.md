@@ -1,9 +1,10 @@
-# syedalihax.com — personal portfolio
+# syedalihax.com — personal portfolio (Next.js)
 
-Static single-page portfolio. Vanilla HTML/CSS/JS, no build step, no backend.
+Multi-page portfolio. Next.js 15 App Router, TypeScript, CSS Modules, no backend.
+The hero is a scroll-scrubbed canvas frame sequence.
 
 The spec Copilot follows lives in **`.github/copilot-instructions.md`** — Copilot Chat reads it
-automatically on every request, so you do not need to repeat the rules in your prompts.
+automatically on every request, so constraints never need restating in prompts.
 
 ---
 
@@ -11,98 +12,95 @@ automatically on every request, so you do not need to repeat the rules in your p
 
 ```bash
 cd ~/Desktop/portfolio
-git init
+npx create-next-app@latest . --ts --app --no-tailwind --no-eslint --no-src-dir --import-alias "@/*"
+mkdir -p app/work/easy-parking app/work/lapitopia app/about app/contact \
+         components lib public/frames public/shots
 code .
 ```
 
-In VS Code: open Copilot Chat (`Ctrl+Alt+I`), sign in with the GitHub account that has Copilot.
+Copilot Chat: `Ctrl+Alt+I`, signed in, **Agent** mode selected (the dropdown next to the input).
+
+If `create-next-app` refuses because the directory is not empty, it is only because of
+`.github/`, `tools/` and `README.md` — move them out, scaffold, move them back.
 
 ---
 
-## Build order — paste these prompts one at a time
+## Build order — one prompt at a time
 
-Run them **in this exact order**, and let Copilot finish each before starting the next.
-After each one, tell me what it wrote and I will review before you continue.
+Run these **in order**. After each, stop and report what Copilot changed; the agent reviews before
+the next prompt. Skipping the review gate is how a portfolio becomes 4000 lines of wrong.
 
-### 1. Skeleton + tokens
+### 1. Scaffold
 ```
-Read .github/copilot-instructions.md. Create index.html with the full semantic skeleton
-for all 7 sections (empty content is fine for now), assets/styles.css with the design
-tokens and base/reset styles exactly as specified, and assets/main.js with an empty
-module that just awaits the frames manifest. No section content yet.
-```
-
-### 2. Hero
-```
-Build the hero section only, per the spec: full-viewport sticky stage, canvas element,
-name heading using --step-3, the positioning line, and a thin frame-loading progress bar.
-Include the prefers-reduced-motion poster fallback in the markup. Styles and behaviour
-for the hero only — do not touch other sections.
+Read .github/copilot-instructions.md. Create app/globals.css with the design tokens and reset,
+app/layout.tsx with Inter + JetBrains Mono via next/font, metadataBase, Person JSON-LD, Nav and
+Footer, app/sitemap.ts and app/robots.ts, and lib/site.ts with the shared constants.
+Create empty placeholder page.tsx files for all 5 routes. No section content yet.
 ```
 
-### 3. The scrubber
+### 2. Nav + Footer
 ```
-Implement the scroll-scrubbed canvas in assets/main.js exactly per the "Hero scrubber"
-section of the spec. Load assets/frames/manifest.json, follow all 10 numbered requirements,
-including the lerp smoothing, the concurrency-limited preloader, the lastDrawn guard,
-and the mobile frame-set switch at 820px. Add a temporary console.warn if the manifest
-is missing so the page still renders.
+Build components/Nav.tsx ('use client' for the mobile menu) and components/Footer.tsx per the spec.
+Nav links: Work, About, Contact. Include the hello@syedalihax.com link in the footer. Styles in
+co-located CSS modules using tokens only.
 ```
 
-### 4. Proof + Work
+### 3. Hero
 ```
-Build the Proof strip and the Work section: two case studies, Easy-Parking and LapToPia.
-Each gets a screenshot slot (assets/shots/easyparking.webp and lapitopia.webp), a one-line
-problem, what was built, the stack as mono tags, and an outcome line. Do not invent numbers —
-leave data-placeholder attributes where a real metric is needed.
-```
-
-### 5. Offer
-```
-Build the Offer section: "Website Fix — $149 AUD" with the price in mono at large size,
-a plain list of exactly what is included (speed, mobile layout, SSL, Google Business Profile,
-analytics), the turnaround, and one CTA that scrolls to contact. Use --accent at most once here.
+Build components/HeroScrubber.tsx as specified in the "Hero scrubber" section — all 11 numbered
+requirements, 'use client', TypeScript, cleanup in the useEffect return. Wire it into app/page.tsx
+with the name heading at --step-3 and the positioning line. Do not build the other home sections.
 ```
 
-### 6. About + Contact + Footer
+### 4. Home sections
 ```
-Build About (max 3 first-person paragraphs, mention Pakistan and the timezone benefit per the
-copy rules), Contact (mailto hello@syedalihax.com plus a Formspree form with real labels for
-name, email, website URL, message), and the Footer.
+Complete app/page.tsx: proof strip, selected work (the two CaseStudyCards), the $149 offer block,
+and the closing CTA to /contact. Add components/CaseStudyCard.tsx and components/Section.tsx.
+Do not touch the hero or any other route.
 ```
 
-### 7. Audit pass
+### 5. Work pages
 ```
-Audit the whole site against the Performance budget and Accessibility sections of the spec.
-List every violation you find with its file and line, and fix only the ones you are certain
-about. Report what you changed.
+Build app/work/page.tsx and both case studies at app/work/easy-parking/page.tsx and
+app/work/lapitopia/page.tsx, each with its own metadata export. Real content only — leave
+data-placeholder attributes where a metric is genuinely unknown, never invent numbers.
+```
+
+### 6. About + Contact
+```
+Build app/about/page.tsx and app/contact/page.tsx with unique metadata. Contact page gets
+components/ContactForm.tsx ('use client') posting to Formspree with client-side validation and
+real labels. About is max 3 first-person paragraphs per the copy rules.
+```
+
+### 7. Audit
+```
+Audit the whole project against the Performance budget, Accessibility and SEO rules in the spec.
+List every violation with file and line. Fix only what you are certain about and report what changed.
 ```
 
 ---
 
-## Frames (my job, not Copilot's)
+## Frames (agent's job, not Copilot's)
 
-When the Google Flow video is ready:
+When the Google Flow clip is ready:
 
 ```bash
 python tools/extract-frames.py hero.mp4
 ```
 
-Writes `assets/frames/desktop/` (120 frames, 1600x900), `assets/frames/mobile/` (60 frames,
-720x405), a poster, and `manifest.json`. It prints a budget check — desktop must stay under
-12 MB, mobile under 2 MB. If over, lower `--desktop-q` or `--desktop-count`.
+Writes `public/frames/desktop/` (120 @ 1600x900), `public/frames/mobile/` (60 @ 720x405),
+`public/frames/poster.webp`, and `manifest.json`. Prints a budget check — desktop must stay under
+12 MB, mobile under 2 MB. Over budget: lower `--desktop-q` first, only then the frame count.
 
-The source video wants: **4–8 seconds, smooth continuous motion, no cuts, no text burned in.**
+Source clip: **4–8 seconds, continuous motion, no cuts, no burned-in text, 16:9, dark background.**
 
 ---
 
 ## Deploy
 
-GitHub Pages or Vercel, both free with HTTPS on a custom domain.
+Vercel free tier, then point `syedalihax.com` at it. Do **not** set `output: 'export'` — it breaks
+`next/image`. Every route is statically generated, so delivery is still static at the edge.
 
-```bash
-git add . && git commit -m "initial" && git push
-```
-
-Then point `syedalihax.com` at the host. DNS is currently on Hostinger nameservers
-(`cosmos/nova.dns-parking.com`) and the domain is still parked on `2.57.91.91`.
+Domain DNS currently sits on Hostinger nameservers (`cosmos/nova.dns-parking.com`) and the apex is
+parked on `2.57.91.91`.

@@ -18,7 +18,7 @@ Outputs:
 import argparse, json, os, subprocess, shutil, sys, glob
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = os.path.join(ROOT, "assets", "frames")
+OUT = os.path.join(ROOT, "public", "frames")
 
 def run(cmd):
     p = subprocess.run(cmd, capture_output=True, text=True)
@@ -99,10 +99,10 @@ def main():
 
     manifest = {
         "desktop": {"count": dn, "width": dw, "height": dh,
-                    "path": "assets/frames/desktop/f_{n:04d}.webp"},
+                    "path": "/frames/desktop/f_{n:04d}.webp"},
         "mobile":  {"count": mn, "width": mw, "height": mh,
-                    "path": "assets/frames/mobile/f_{n:04d}.webp"},
-        "poster":  "assets/frames/poster.webp",
+                    "path": "/frames/mobile/f_{n:04d}.webp"},
+        "poster":  "/frames/poster.webp",
     }
     with open(os.path.join(OUT, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2)
