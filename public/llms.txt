@@ -1,0 +1,19 @@
+# Syed Ali — Web Developer
+
+> I build and fix websites for clients worldwide from Quetta, Pakistan.
+
+## About
+I am a web developer based in Quetta, Pakistan, and I work remotely across time zones. I build and fix websites with Next.js and TypeScript.
+
+## Services
+- Website fix — $99 USD — one small, clearly defined website repair; delivered in one day.
+- Website build — $199 USD — a one-page website built with Next.js and TypeScript; delivered in three days.
+- Website build plus — $499 USD — a multi-page website built with Next.js and TypeScript; delivered in seven days.
+
+## Work
+- Easy-Parking — website project case study. https://syedalihax.com/work/easy-parking
+- LapToPia — website project case study. https://syedalihax.com/work/lapitopia
+
+## Contact
+hello@syedalihax.com
+https://syedalihax.com/contact
