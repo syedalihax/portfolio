@@ -48,7 +48,7 @@ export default function OpenGraphImage() {
               lineHeight: 1.2,
             }}
           >
-            SYED ALI · WEB DEVELOPER · QUETTA
+            SYED ALI HAX · WEB DEVELOPER · QUETTA
           </div>
           <div
             style={{

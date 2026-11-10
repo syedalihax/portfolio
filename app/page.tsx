@@ -106,7 +106,7 @@ export default function HomePage() {
                 <div className="lg:col-span-5 lg:flex lg:justify-end">
                   <div className="w-full max-w-[420px]">
                     <Image
-                      src="/photos/syed-ali.webp"
+                      src="/photos/syed-ali-square.webp"
                       alt="Portrait of Syed Ali, web developer"
                       width={900}
                       height={900}
