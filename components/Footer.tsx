@@ -3,15 +3,34 @@ import { email, name, phone, socials, whatsappUrl } from "../lib/site";
 export default function Footer() {
   return (
     <footer className="band-ink">
-      <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-6 px-6 py-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[rgba(247,244,238,0.7)]">
-          {name} · Web Developer
-        </p>
+      <div className="mx-auto grid w-full max-w-[1360px] gap-6 px-[clamp(20px,4vw,56px)] py-8 md:grid-cols-3 md:items-center">
+        <div>
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted-inv)]">
+            {name}
+          </p>
+          <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted-inv)]">
+            Web Developer
+          </p>
+        </div>
 
-        <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+        <div className="flex flex-wrap items-center gap-4">
+          {socials.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="me noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center justify-center font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--paper)]"
+            >
+              {social.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="md:text-right">
           <a
             href={`mailto:${email}`}
-            className="font-mono text-[11px] uppercase tracking-[0.12em] text-paper underline-offset-4 hover:underline"
+            className="block font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--paper)]"
           >
             {email}
           </a>
@@ -20,23 +39,10 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`WhatsApp: ${phone}`}
-            className="font-mono text-[11px] uppercase tracking-[0.12em] text-paper underline-offset-4 hover:underline"
+            className="mt-3 block font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--paper)]"
           >
             WhatsApp
           </a>
-          {socials
-            .filter((social) => social.href !== "TODO")
-            .map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="me noopener noreferrer"
-                className="font-mono text-[11px] uppercase tracking-[0.12em] text-paper underline-offset-4 hover:underline"
-              >
-                {social.label}
-              </a>
-            ))}
         </div>
       </div>
     </footer>

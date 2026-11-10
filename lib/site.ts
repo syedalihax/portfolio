@@ -18,9 +18,9 @@ export const nav = [
 
 export const socials = [
   { label: "GitHub", href: "https://github.com/syedalihax" },
-  { label: "LinkedIn", href: "TODO" },
-  { label: "Facebook", href: "TODO" },
-  { label: "Instagram", href: "TODO" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/syedalihax" },
+  { label: "Facebook", href: "https://www.facebook.com/syedalihax" },
+  { label: "Instagram", href: "https://www.instagram.com/syedali.hax" },
 ] as const;
 
 export const projects = [

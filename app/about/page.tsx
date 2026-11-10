@@ -24,57 +24,104 @@ export const metadata: Metadata = {
   },
 };
 
+const processSteps = [
+  "I scope the issue or build before the first line of code.",
+  "I quote a fixed price and date before I start.",
+  "I ship the site and deploy it on the agreed date.",
+  "I hand over the repo so it remains easy to maintain.",
+] as const;
+
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-paper text-ink">
-      <header className="border-b border-rule">
-        <Nav />
-      </header>
-      <main className="mx-auto w-full max-w-[1180px] px-6">
-        <article>
-          <Reveal>
-            <header className="py-section">
-              <p className="font-mono text-meta text-muted">About</p>
-              <h1 className="mt-4 font-display text-display leading-[0.98] text-ink">
-                How I work
-              </h1>
-            </header>
-          </Reveal>
-          <div className="grid grid-cols-1 gap-8 pb-section md:grid-cols-12">
-            <div className="md:col-span-7">
-              <Reveal>
-                <p className="border-t border-rule py-6 text-body leading-relaxed text-ink">
-                  I fix existing websites and build small-business sites with
-                  Next.js, TypeScript and Tailwind CSS, then deploy them and
-                  hand over the repository.
-                </p>
-              </Reveal>
-              <Reveal delay={0.06}>
-                <p className="border-t border-rule py-6 text-body leading-relaxed text-ink">
-                  I am based in Quetta, Pakistan, and work remotely with clients
-                  across time zones. I reply within one working day.
-                </p>
-              </Reveal>
-              <Reveal delay={0.12}>
-                <p className="border-y border-rule py-6 text-body leading-relaxed text-ink">
-                  I agree on the scope in writing before I start, quote a fixed
-                  price for that scope, and do not require a retainer.
-                </p>
-              </Reveal>
-            </div>
-            <div className="md:col-start-9 md:col-span-4">
-              <Image
-                src="/photos/syed-ali.webp"
-                width={900}
-                height={1448}
-                sizes="(max-width: 768px) 100vw, 380px"
-                alt="Syed Ali, web developer, photographed at a window"
-                className="h-auto w-full rounded-sm border border-rule grayscale-[0.15] contrast-[1.02]"
-              />
+    <div className="min-h-screen bg-[var(--paper)] text-[var(--ink)]">
+      <Nav />
+
+      <main>
+        <section className="band-paper">
+          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
+            <Reveal>
+              <div className="grid gap-5 lg:grid-cols-12 lg:items-end">
+                <div className="lg:col-span-2">
+                  <p className="section-label text-[var(--muted)]">About</p>
+                </div>
+                <div className="lg:col-span-10">
+                  <h1 className="font-sans text-[clamp(3.2rem,8vw,6.4rem)] font-semibold leading-[0.92] tracking-[-0.045em] text-[var(--ink)]">
+                    How I work
+                  </h1>
+                </div>
+              </div>
+            </Reveal>
+
+            <div className="mt-12 grid gap-8 lg:grid-cols-12">
+              <div className="lg:col-span-7">
+                <Reveal>
+                  <p className="border-t border-[var(--rule)] py-6 text-[17px] leading-7 text-[var(--ink)]">
+                    I fix existing websites and build small-business sites with
+                    Next.js, TypeScript and Tailwind CSS, then deploy them and
+                    hand over the repository.
+                  </p>
+                </Reveal>
+                <Reveal delay={0.06}>
+                  <p className="border-t border-[var(--rule)] py-6 text-[17px] leading-7 text-[var(--ink)]">
+                    I am based in Quetta, Pakistan, and work remotely with clients
+                    across time zones. I reply within one working day.
+                  </p>
+                </Reveal>
+                <Reveal delay={0.12}>
+                  <p className="border-t border-[var(--rule)] py-6 text-[17px] leading-7 text-[var(--ink)]">
+                    I agree on the scope in writing before I start, quote a fixed
+                    price for that scope, and do not require a retainer.
+                  </p>
+                </Reveal>
+
+                <div className="mt-8 grid gap-4 border-t border-[var(--rule)] pt-5 md:grid-cols-3">
+                  <div>
+                    <p className="section-label text-[var(--muted)]">Location</p>
+                    <p className="mt-2 font-mono text-[18px] text-[var(--ink)]">Quetta, PK</p>
+                  </div>
+                  <div>
+                    <p className="section-label text-[var(--muted)]">Remote</p>
+                    <p className="mt-2 font-mono text-[18px] text-[var(--ink)]">Worldwide</p>
+                  </div>
+                  <div>
+                    <p className="section-label text-[var(--muted)]">Scope</p>
+                    <p className="mt-2 font-mono text-[18px] text-[var(--ink)]">Fixed price</p>
+                  </div>
+                </div>
+
+                <div className="mt-12">
+                  <p className="section-label text-[var(--muted)]">How I work</p>
+                  <div className="mt-4 border-t border-[var(--rule)]">
+                    {processSteps.map((step, index) => (
+                      <div
+                        key={step}
+                        className="grid gap-4 border-b border-[var(--rule)] py-4 md:grid-cols-[3rem_1fr] md:items-start"
+                      >
+                        <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted)]">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <p className="text-[17px] leading-7 text-[var(--ink)]">{step}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4 lg:col-start-9">
+                <Image
+                  src="/photos/syed-ali.webp"
+                  width={900}
+                  height={1448}
+                  sizes="(max-width: 768px) 100vw, 420px"
+                  alt="Syed Ali, web developer, photographed at a window"
+                  className="h-auto w-full max-w-[420px] border border-[var(--rule)] rounded-[2px]"
+                />
+              </div>
             </div>
           </div>
-        </article>
+        </section>
       </main>
+
       <Footer />
     </div>
   );

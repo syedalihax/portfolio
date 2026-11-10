@@ -15,9 +15,9 @@ import {
   whatsappUrl,
 } from "../lib/site";
 
-const title = "Syed Ali — Web Developer";
+const title = "Syed Ali — websites for small business, fixed price";
 const description =
-  "Freelance web developer in Quetta. I fix broken sites and build clean one-page and multi-page websites for small businesses, with fixed price and fixed date.";
+  "Freelance web developer in Quetta. Fixes broken sites and builds one- to five-page websites, fixed price and fixed date. Easy-Parking and LapToPia are live.";
 
 export const metadata: Metadata = {
   title,
@@ -42,49 +42,49 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    label: "Fix",
+    label: "Audit",
     description:
-      "I work on the exact issue you already see: a broken booking form, a mobile layout that collapses, or a page that fails to load.",
+      "I check a live site for the issue you are already seeing, then repair the root cause and ship it quickly.",
   },
   {
     label: "Build",
     description:
-      "I design and build a one-page site with a clear offer, a working contact flow, and a deployment you can hand over without fuss.",
+      "I make a one-page site with a hero, services, contact form and Google Business Profile, then deploy and hand it over.",
   },
   {
     label: "Build + booking",
     description:
-      "I create up to five pages, add enquiry or booking logic, and polish the copy so the site reads clearly and converts.",
+      "I make up to five pages with a booking or enquiry flow and a copywriting pass, then deploy and hand it over.",
   },
 ] as const;
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-paper text-ink">
-      <header className="border-b border-rule bg-paper">
-        <Nav />
-      </header>
+    <div className="min-h-screen bg-[var(--paper)] text-[var(--ink)]">
+      <Nav />
 
       <main>
-        <div className="mx-auto w-full max-w-[1180px] px-6">
-          <Reveal>
-            <section aria-labelledby="home-title" className="py-section">
-              <div className="grid gap-8 lg:grid-cols-[1.5fr_0.7fr] lg:items-end">
-                <div>
-                  <p className="section-label text-muted">Web developer · Quetta, PK · remote</p>
+        <section className="band-paper">
+          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
+            <Reveal>
+              <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
+                <div className="lg:col-span-8">
+                  <p className="section-label text-[var(--muted)]">
+                    WEB DEVELOPER — QUETTA, PK — REMOTE
+                  </p>
                   <h1
                     id="home-title"
-                    className="mt-6 max-w-[12ch] font-display text-display leading-[0.94] tracking-[-0.04em] text-ink"
+                    className="mt-6 max-w-[11ch] font-sans text-[clamp(3.2rem,8vw,6.4rem)] font-semibold leading-[0.92] tracking-[-0.045em] text-[var(--ink)]"
                   >
                     Websites that make people reply.
                   </h1>
-                  <p className="mt-6 max-w-[56ch] text-body leading-relaxed text-muted">
+                  <p className="mt-6 max-w-[54ch] text-[17px] leading-7 text-[var(--muted)]">
                     {positioning}
                   </p>
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <div className="mt-8 flex flex-wrap items-center gap-3">
                     <a
                       href="#offer"
-                      className="inline-flex min-h-[46px] items-center justify-center border border-ink bg-ink px-5 font-mono text-[11px] uppercase tracking-[0.12em] text-paper"
+                      className="inline-flex min-h-[46px] items-center justify-center border border-[var(--ink)] bg-[var(--ink)] px-5 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--paper)]"
                     >
                       See pricing
                     </a>
@@ -92,125 +92,196 @@ export default function HomePage() {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[46px] items-center justify-center border border-rule bg-transparent px-5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink"
+                      className="inline-flex min-h-[44px] items-center justify-center border border-[var(--ink)] bg-transparent px-4 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--ink)]"
                     >
-                      WhatsApp
+                      WhatsApp ↗
                     </a>
+                    <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted)]">
+                      Replies within one working day
+                    </span>
                   </div>
                 </div>
-                <div className="lg:pb-3 lg:text-right">
-                  <p className="section-label text-muted">Available for work</p>
+
+                <div className="lg:col-span-4 lg:text-right">
+                  <p className="section-label text-[var(--muted)]">Available for work</p>
                 </div>
               </div>
-            </section>
-          </Reveal>
-
-          <div className="border-t border-rule" />
-          <div className="py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-            Web developer · Quetta, PK · remote
-          </div>
-        </div>
-
-        <section className="band-sand">
-          <div className="mx-auto w-full max-w-[1180px] px-6 py-section">
-            <Reveal>
-              <h2 id="work-title" className="mb-8 font-display text-h2 text-ink">
-                Selected work
-              </h2>
             </Reveal>
-            {projects.map((project, index) => (
-              <CaseRow key={project.name} {...project} delay={index * 0.06} />
-            ))}
+
+            <div className="mt-12 border-t border-[var(--rule)] pt-4">
+              <div className="grid gap-6 md:grid-cols-3">
+                <div>
+                  <p className="section-label text-[var(--muted)]">Products</p>
+                  <p className="mt-2 font-mono text-[18px] text-[var(--ink)]">2 shipped</p>
+                </div>
+                <div>
+                  <p className="section-label text-[var(--muted)]">Pricing</p>
+                  <p className="mt-2 font-mono text-[18px] text-[var(--ink)]">Fixed price</p>
+                </div>
+                <div>
+                  <p className="section-label text-[var(--muted)]">Response</p>
+                  <p className="mt-2 font-mono text-[18px] text-[var(--ink)]">One working day</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <div className="mx-auto w-full max-w-[1180px] px-6">
-          <section aria-labelledby="services-title" className="py-section">
+        <section className="band-forest">
+          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
             <Reveal>
-              <h2 id="services-title" className="mb-8 font-display text-h2 text-ink">
-                What I do
-              </h2>
+              <div className="grid gap-4 lg:grid-cols-12 lg:items-end">
+                <div className="lg:col-span-2">
+                  <p className="section-label text-[var(--muted-inv)]">01</p>
+                </div>
+                <div className="lg:col-span-7">
+                  <h2 className="font-sans text-[clamp(2.2rem,4.6vw,3.6rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-[var(--paper)]">
+                    Selected work
+                  </h2>
+                </div>
+                <div className="lg:col-span-3 lg:text-right">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted-inv)]">
+                    Recent builds
+                  </p>
+                </div>
+              </div>
             </Reveal>
-            <div className="space-y-2 border-t border-rule">
+
+            <div className="mt-6">
+              {projects.map((project, index) => (
+                <CaseRow
+                  key={project.name}
+                  {...project}
+                  delay={index * 0.06}
+                  reverse={index === 1}
+                  headingLevel="h3"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="band-sand">
+          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
+            <Reveal>
+              <div className="grid gap-4 lg:grid-cols-12 lg:items-end">
+                <div className="lg:col-span-2">
+                  <p className="section-label text-[var(--muted)]">02</p>
+                </div>
+                <div className="lg:col-span-7">
+                  <h2 className="font-sans text-[clamp(2.2rem,4.6vw,3.6rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-[var(--ink)]">
+                    What I do
+                  </h2>
+                </div>
+              </div>
+            </Reveal>
+
+            <div className="mt-8 space-y-0 border-t border-[var(--rule)]">
               {services.map((service, index) => (
                 <Reveal key={service.label} delay={index * 0.06}>
-                  <div className="grid gap-3 border-b border-rule py-5 md:grid-cols-[14rem_1fr] md:gap-8">
-                    <p className="section-label text-muted">{service.label}</p>
-                    <p className="max-w-[62ch] text-body leading-relaxed text-muted">
-                      {service.description}
+                  <div className="grid gap-4 border-b border-[var(--rule)] py-5 transition-colors hover:bg-[rgba(16,16,16,0.03)] md:grid-cols-[9rem_1fr_10rem] md:items-start md:gap-8">
+                    <p className="section-label text-[var(--muted)]">{String(index + 1).padStart(2, "0")}</p>
+                    <div>
+                      <h3 className="font-sans text-[clamp(1.4rem,2vw,1.9rem)] font-semibold tracking-[-0.03em] text-[var(--ink)]">
+                        {service.label}
+                      </h3>
+                      <p className="mt-2 max-w-[62ch] text-[17px] leading-7 text-[var(--muted)]">
+                        {service.description}
+                      </p>
+                    </div>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted)] md:text-right">
+                      {service.label === "Audit" ? "$99" : service.label === "Build" ? "$199" : "$499"}
                     </p>
                   </div>
                 </Reveal>
               ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section aria-labelledby="offer-title" className="py-section">
+        <section id="offer" className="band-paper">
+          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
             <Reveal>
-              <h2 id="offer-title" className="font-display text-h2 text-ink">
-                Offer
-              </h2>
-              <p className="mt-4 max-w-[60ch] text-body leading-relaxed text-muted">
+              <div className="grid gap-4 lg:grid-cols-12 lg:items-end">
+                <div className="lg:col-span-2">
+                  <p className="section-label text-[var(--muted)]">03</p>
+                </div>
+                <div className="lg:col-span-7">
+                  <h2 className="font-sans text-[clamp(2.2rem,4.6vw,3.6rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-[var(--ink)]">
+                    Offer
+                  </h2>
+                </div>
+              </div>
+              <p className="mt-5 max-w-[52ch] text-[17px] leading-7 text-[var(--muted)]">
                 These are my founding rates for clearly scoped website work.
               </p>
             </Reveal>
-            <div className="mt-8 grid gap-3 border-t border-rule pt-5 md:grid-cols-3">
-              <p className="section-label text-muted">01 send the URL</p>
-              <p className="section-label text-muted">02 fixed quote</p>
-              <p className="section-label text-muted">03 live on date</p>
-            </div>
-            <dl className="mt-8">
+
+            <dl className="mt-10 space-y-0 border-t border-[var(--rule)]">
               {offer.map((tier, index) => (
                 <Reveal key={tier.name} delay={index * 0.06}>
-                  <div className="grid gap-4 border-t border-rule py-6 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-8">
+                  <div className="grid gap-5 border-b border-[var(--rule)] py-6 md:grid-cols-[1.2fr_0.8fr] md:items-end md:gap-8">
                     <div>
-                      <dt className="text-body text-ink">{tier.name}</dt>
-                      <dd className="mt-2 font-mono text-meta text-muted">
+                      <dt className="font-sans text-[clamp(1.4rem,2vw,1.9rem)] font-semibold tracking-[-0.03em] text-[var(--ink)]">
+                        {tier.name}
+                      </dt>
+                      <dd className="mt-2 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted)]">
                         {tier.turnaround}
                       </dd>
                     </div>
                     <div className="md:text-right">
-                      <dd className="font-display text-[2.5rem] leading-none text-ink md:text-[3.1rem]">
+                      <dd className="font-sans text-[clamp(2.8rem,5vw,4.4rem)] font-medium tracking-[-0.04em] text-[var(--ink)]">
                         ${tier.price}
                       </dd>
                     </div>
-                    <dd className="col-span-full max-w-[62ch] text-body leading-relaxed text-muted">
+                    <dd className="col-span-full max-w-[62ch] text-[17px] leading-7 text-[var(--muted)]">
                       {tier.includes}
                     </dd>
                   </div>
                 </Reveal>
               ))}
             </dl>
-            <p className="mt-4 border-t border-rule pt-5 font-mono text-meta text-muted">
+
+            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted)]">
               Prices in USD, fixed. No hourly billing, no lock-in.
             </p>
-          </section>
+          </div>
+        </section>
 
-          <section aria-labelledby="faq-title" className="py-section">
+        <section className="band-sand">
+          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
             <Reveal>
-              <h2 id="faq-title" className="mb-8 font-display text-h2 text-ink">
-                Questions
-              </h2>
-            </Reveal>
-            <Reveal>
-              <Faq />
-            </Reveal>
-          </section>
-        </div>
-
-        <section className="band-ink">
-          <div className="mx-auto w-full max-w-[1180px] px-6 py-section">
-            <Reveal>
-              <div className="grid gap-8 lg:grid-cols-[0.7fr_1.2fr] lg:items-start">
-                <div>
-                  <p className="section-label text-[rgba(247,246,242,0.7)]">Contact</p>
-                  <h2 id="contact-title" className="mt-4 font-display text-h2 text-paper">
-                    I reply within one working day.
+              <div className="grid gap-8 lg:grid-cols-12">
+                <div className="lg:col-span-4">
+                  <p className="section-label text-[var(--muted)]">04</p>
+                  <h2 className="mt-4 font-sans text-[clamp(2.2rem,4.6vw,3.6rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-[var(--ink)]">
+                    Questions
                   </h2>
+                </div>
+                <div className="lg:col-span-8">
+                  <Faq />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        <section className="band-clay">
+          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
+            <Reveal>
+              <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+                <div className="lg:col-span-5">
+                  <p className="section-label text-[rgba(16,16,16,0.7)]">05</p>
+                  <h2 className="mt-4 font-sans text-[clamp(2.2rem,4.6vw,3.6rem)] font-semibold leading-[0.98] tracking-[-0.03em] text-[var(--ink)]">
+                    Tell me what you need
+                  </h2>
+                  <p className="mt-5 max-w-[42ch] text-[17px] leading-7 text-[rgba(16,16,16,0.74)]">
+                    I reply within one working day.
+                  </p>
                   <div className="mt-8 space-y-3">
                     <a
                       href={`mailto:${email}`}
-                      className="block font-mono text-[11px] uppercase tracking-[0.12em] text-paper underline-offset-4 hover:underline"
+                      className="block font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--ink)]"
                     >
                       {email}
                     </a>
@@ -218,14 +289,15 @@ export default function HomePage() {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block font-mono text-[11px] uppercase tracking-[0.12em] text-paper underline-offset-4 hover:underline"
                       aria-label={`WhatsApp: ${phone}`}
+                      className="block font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--ink)]"
                     >
                       WhatsApp · {phone}
                     </a>
                   </div>
                 </div>
-                <div>
+
+                <div className="lg:col-span-7">
                   <ContactForm />
                 </div>
               </div>

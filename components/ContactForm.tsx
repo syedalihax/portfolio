@@ -55,10 +55,13 @@ export default function ContactForm() {
       action={`https://formspree.io/f/${formspreeEndpoint}`}
       method="POST"
       onSubmit={handleSubmit}
-      className="w-full border-t border-white/15"
+      className="w-full"
     >
-      <div className="grid gap-2 border-b border-white/15 py-5">
-        <label htmlFor="contact-name" className="font-mono text-[11px] uppercase tracking-[0.12em] text-[rgba(247,246,242,0.75)]">
+      <div className="grid gap-2 border-b border-[rgba(16,16,16,0.35)] py-4">
+        <label
+          htmlFor="contact-name"
+          className="font-mono text-[13px] uppercase tracking-[0.14em] text-[rgba(16,16,16,0.75)]"
+        >
           Your name
         </label>
         <input
@@ -68,13 +71,13 @@ export default function ContactForm() {
           autoComplete="name"
           minLength={2}
           required
-          className="w-full border border-white/15 bg-transparent px-3 py-3 font-sans text-body text-paper placeholder:text-[rgba(247,246,242,0.55)]"
+          className="h-[56px] w-full border border-[rgba(16,16,16,0.35)] bg-transparent px-3 font-sans text-[17px] text-ink placeholder:text-[rgba(16,16,16,0.5)]"
         />
       </div>
-      <div className="grid gap-2 border-b border-white/15 py-5">
+      <div className="grid gap-2 border-b border-[rgba(16,16,16,0.35)] py-4">
         <label
           htmlFor="contact-email"
-          className="font-mono text-[11px] uppercase tracking-[0.12em] text-[rgba(247,246,242,0.75)]"
+          className="font-mono text-[13px] uppercase tracking-[0.14em] text-[rgba(16,16,16,0.75)]"
         >
           Email address
         </label>
@@ -84,13 +87,13 @@ export default function ContactForm() {
           type="email"
           autoComplete="email"
           required
-          className="w-full border border-white/15 bg-transparent px-3 py-3 font-sans text-body text-paper placeholder:text-[rgba(247,246,242,0.55)]"
+          className="h-[56px] w-full border border-[rgba(16,16,16,0.35)] bg-transparent px-3 font-sans text-[17px] text-ink placeholder:text-[rgba(16,16,16,0.5)]"
         />
       </div>
-      <div className="grid gap-2 border-b border-white/15 py-5">
+      <div className="grid gap-2 border-b border-[rgba(16,16,16,0.35)] py-4">
         <label
           htmlFor="contact-message"
-          className="font-mono text-[11px] uppercase tracking-[0.12em] text-[rgba(247,246,242,0.75)]"
+          className="font-mono text-[13px] uppercase tracking-[0.14em] text-[rgba(16,16,16,0.75)]"
         >
           What do you need help with?
         </label>
@@ -100,10 +103,10 @@ export default function ContactForm() {
           rows={6}
           minLength={20}
           required
-          className="w-full border border-white/15 bg-transparent px-3 py-3 font-sans text-body text-paper placeholder:text-[rgba(247,246,242,0.55)]"
+          className="w-full border border-[rgba(16,16,16,0.35)] bg-transparent px-3 py-3 font-sans text-[17px] text-ink placeholder:text-[rgba(16,16,16,0.5)]"
         />
       </div>
-      <p className="mt-4 text-body leading-relaxed text-[rgba(247,246,242,0.75)]">
+      <p className="mt-4 text-[17px] leading-7 text-[rgba(16,16,16,0.72)]">
         Name, a valid email address and a message are required before the form
         can be sent.
       </p>
@@ -111,10 +114,8 @@ export default function ContactForm() {
         <p
           role={feedback.type === "error" ? "alert" : "status"}
           aria-live="polite"
-          className={`mt-4 text-body leading-relaxed ${
-            feedback.type === "success"
-              ? "text-paper"
-              : "text-[rgba(247,246,242,0.75)]"
+          className={`mt-4 text-[17px] leading-7 ${
+            feedback.type === "success" ? "text-ink" : "text-[rgba(16,16,16,0.72)]"
           }`}
         >
           {feedback.message}
@@ -123,7 +124,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSending}
-        className="mt-5 border border-paper bg-paper px-5 py-3 font-mono text-[11px] uppercase tracking-[0.12em] text-ink disabled:cursor-wait disabled:opacity-60"
+        className="mt-5 inline-flex min-h-[44px] items-center justify-center border border-[var(--ink)] bg-[var(--ink)] px-5 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--paper)] disabled:cursor-wait disabled:opacity-60"
       >
         {isSending ? "Sending…" : "Send message"}
       </button>
