@@ -12,9 +12,6 @@ export default function Nav() {
     <header className="sticky top-0 z-50 border-b border-[var(--rule)] bg-[var(--paper)]">
       <div className="mx-auto flex h-[72px] w-full max-w-[1360px] items-center justify-between gap-4 px-[clamp(20px,4vw,56px)]">
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center border border-[var(--ink)] font-mono text-[10px] uppercase tracking-[0.14em] text-ink">
-            SAL
-          </div>
           <a href="/" className="font-sans text-[15px] font-medium tracking-[-0.02em] text-ink">
             Syed Ali
           </a>

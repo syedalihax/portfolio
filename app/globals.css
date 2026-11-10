@@ -110,11 +110,6 @@ svg {
   --rule: var(--rule-inv);
 }
 
-.band-forest a,
-.band-ink a {
-  color: var(--paper);
-}
-
 .section-label {
   font-family: var(--font-mono);
   font-size: 11px;
