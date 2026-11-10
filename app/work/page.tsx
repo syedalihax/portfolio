@@ -51,21 +51,26 @@ export default function WorkPage() {
           </div>
         </section>
 
-        <section className="band-paper">
-          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] pb-[clamp(88px,10vw,140px)]">
-            {projects.map((project, index) => (
-              <CaseRow
-                key={project.name}
-                {...project}
-                delay={index * 0.06}
-                reverse={index === 1}
-                headingLevel="h2"
-              />
-            ))}
-          </div>
-        </section>
+        <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] pb-[clamp(88px,10vw,140px)]">
+          {projects.map((project, index) => (
+            <section
+              key={project.name}
+              className={index % 2 === 0 ? "band-paper" : "band-sand"}
+            >
+              <div className="mx-auto w-full max-w-[1360px] py-[clamp(56px,7vw,90px)]">
+                <CaseRow
+                  {...project}
+                  delay={index * 0.06}
+                  reverse={index === 1}
+                  headingLevel="h2"
+                  theme="light"
+                />
+              </div>
+            </section>
+          ))}
+        </div>
 
-        <section className="band-sand">
+        <section className="band-clay">
           <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
             <a
               href="/contact"

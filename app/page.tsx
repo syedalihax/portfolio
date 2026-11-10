@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CaseRow from "../components/CaseRow";
 import ContactForm from "../components/ContactForm";
 import Faq from "../components/Faq";
@@ -68,7 +69,7 @@ export default function HomePage() {
           <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
             <Reveal>
               <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-                <div className="lg:col-span-8">
+                <div className="lg:col-span-7">
                   <p className="section-label text-[var(--muted)]">
                     WEB DEVELOPER — QUETTA, PK — REMOTE
                   </p>
@@ -92,7 +93,7 @@ export default function HomePage() {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center justify-center border border-[var(--ink)] bg-transparent px-4 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--ink)]"
+                      className="inline-flex min-h-[44px] items-center justify-center border border-[#25D366] bg-[#25D366] px-4 font-mono text-[11px] uppercase tracking-[0.14em] text-[#0f1f18]"
                     >
                       WhatsApp ↗
                     </a>
@@ -102,8 +103,17 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-4 lg:text-right">
-                  <p className="section-label text-[var(--muted)]">Available for work</p>
+                <div className="lg:col-span-5 lg:flex lg:justify-end">
+                  <div className="w-full max-w-[420px]">
+                    <Image
+                      src="/photos/syed-ali.webp"
+                      alt="Portrait of Syed Ali, web developer"
+                      width={900}
+                      height={900}
+                      priority
+                      className="h-auto w-full border border-[var(--rule)] bg-[var(--paper)]"
+                    />
+                  </div>
                 </div>
               </div>
             </Reveal>
