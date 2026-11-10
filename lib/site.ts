@@ -1,5 +1,5 @@
 export const name = "Syed Ali";
-export const url = "https://syedalihax.com";
+export const url = "https://www.syedalihax.com";
 export const email = "hello@syedalihax.com";
 export const phone = "+92 318 3179797";
 export const whatsappUrl = "https://wa.me/923183179797";
@@ -14,6 +14,44 @@ export const nav = [
   { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+] as const;
+
+export const socials = [
+  { label: "GitHub", href: "https://github.com/syedalihax" },
+  { label: "LinkedIn", href: "TODO" },
+  { label: "Facebook", href: "TODO" },
+  { label: "Instagram", href: "TODO" },
+] as const;
+
+export const projects = [
+  {
+    number: "01",
+    name: "Easy-Parking",
+    href: "/work/easy-parking",
+    problem: "Parking operators tracked monthly members, walk-ins and unpaid dues on paper.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/shots/easyparking.webp",
+    imageAlt:
+      "Easy-Parking monthly dues screen showing vehicle billing, payments and balances.",
+    imageWidth: 1900,
+    imageHeight: 950,
+    liveUrl: "https://easy-parking-management.vercel.app/",
+    codeUrl: "https://github.com/syedalihax/Easy-Parking",
+  },
+  {
+    number: "02",
+    name: "LapToPia",
+    href: "/work/lapitopia",
+    problem: "Hardware shoppers needed one storefront for laptops, PCs, servers and miners.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    image: "/shots/lapitopia.webp",
+    imageAlt:
+      "LapToPia hardware storefront featuring computer systems and product categories.",
+    imageWidth: 1917,
+    imageHeight: 1078,
+    liveUrl: "https://laptopia-p.vercel.app/",
+    codeUrl: "https://github.com/syedalihax/LapToPia",
+  },
 ] as const;
 
 export const offer = [

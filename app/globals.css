@@ -1,29 +1,85 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light;
+}
+
 html {
   overflow-x: clip;
 }
 
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+}
+
+::selection {
+  background: rgba(27, 77, 62, 0.16);
+}
+
 :focus-visible {
   outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
+  outline-offset: 3px;
 }
 
 @theme {
-  --color-paper: #F7F6F2;
-  --color-ink: #16150F;
-  --color-muted: #6B6A62;
-  --color-rule: #DCD8CE;
-  --color-accent: #1B4D3E;
+  --color-paper: #f7f6f2;
+  --color-ink: #16150f;
+  --color-muted: #6b6a62;
+  --color-rule: #dcd8ce;
+  --color-accent: #1b4d3e;
+  --color-sand: #efe7da;
+  --color-forest: #141d1a;
 
   --font-display: var(--font-instrument-serif), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
 
-  --text-display: clamp(3rem, 8.5vw, 8rem);
-  --text-h2: clamp(2rem, 4vw, 3.4rem);
-  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --text-display: clamp(3rem, 8vw, 7rem);
+  --text-h2: clamp(2rem, 3vw, 3rem);
+  --text-body: clamp(1rem, 0.95rem + 0.2vw, 1.1rem);
   --text-meta: 0.78rem;
 
-  --spacing-section: clamp(3.5rem, 7vh, 6rem);
+  --spacing-section: clamp(4.5rem, 9vh, 7rem);
+}
+
+.band-sand {
+  background: var(--color-sand);
+}
+
+.band-ink {
+  background: var(--color-forest);
+  color: var(--color-paper);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
