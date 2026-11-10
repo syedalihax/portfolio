@@ -1,122 +1,131 @@
-# syedalihax.com
+# Syed Ali — Portfolio
 
-Personal site for a web developer. Next.js 16 App Router, TypeScript, **Tailwind CSS v4**,
-**Framer Motion**, no backend. Editorial design: paper background, hairline rules, no shadows,
-no gradients, nothing rounded past 2px.
+A personal portfolio and freelance web developer website for Syed Ali, built with Next.js 16, TypeScript, and Tailwind CSS v4.
 
-The spec Copilot obeys is **`.github/copilot-instructions.md`**. Copilot Chat reads it
-automatically on every request, so the rules never need restating.
+The site presents a quiet editorial design system: paper background, hairline rules, left-aligned hierarchy, a restrained palette, and clear conversion-focused sections for work, pricing, FAQ, and contact.
 
----
+## Overview
 
-## Setup
+This project is a personal brand site for a remote web developer based in Quetta, Pakistan, working with clients internationally.
+
+The site includes:
+- homepage with hero, selected work, services, pricing, FAQ, and contact form
+- dedicated work pages for project case studies
+- about page with direct remote / international positioning
+- contact form connected to Formspree
+- SEO metadata, Open Graph, sitemap, robots rules, and schema markup
+- AI-friendly content exposure via llms.txt and FAQ schema
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Vercel Analytics and Speed Insights
+
+## Local setup
 
 ```bash
-cd ~/Desktop/portfolio
-npx create-next-app@latest . --ts --app --tailwind --no-eslint --no-src-dir --import-alias "@/*"
-npm i framer-motion clsx
-mkdir -p app/work/easy-parking app/work/lapitopia app/about app/contact components lib public/shots
-code .
+npm install
+npm run dev
 ```
 
-If `create-next-app` refuses because the folder is not empty, `.github/` and `README.md` are the
-only things in it — move them out, scaffold, move them back.
+Then open:
 
-### Screenshots — do this before batch 2
-
-- `public/shots/easyparking.webp`
-- `public/shots/lapitopia.webp`
-
-1600px wide, webp. Without them the work section renders broken images.
-
----
-
-## How to run this with Copilot
-
-Copilot **can** work autonomously in Agent mode, but do not hand it all six steps at once — it
-will write two thousand lines in one pass, skip the review points, and you will spend the next
-hour debugging instead of shipping.
-
-Run **three batches**. Paste one, let it finish, run `npm run build`, then move on.
-
----
-
-## Batch 1 — foundation, tokens, SEO/AEO files
-
-```
-Read .github/copilot-instructions.md in full before writing anything. Then build only the
-foundation, in this order:
-
-1. app/globals.css — Tailwind v4 `@import "tailwindcss"` plus the @theme block from the spec,
-   exactly those tokens. Nothing else.
-2. lib/site.ts — name, url, email, nav array, offer (three tiers $99/$199/$499), and a faqs
-   array of 5 real questions and answers about website fixes and builds, following the AEO
-   rules: each answer 1-2 standalone sentences with at least one concrete fact.
-3. lib/schema.ts — personSchema, websiteSchema, serviceSchema, faqSchema built from site.ts.
-4. app/layout.tsx — Instrument Serif + Inter + JetBrains Mono via next/font as CSS variables,
-   metadataBase, openGraph in metadata, MotionConfig reducedMotion="user", and the four JSON-LD
-   scripts.
-5. app/sitemap.ts, app/robots.ts (explicitly allow GPTBot, OAI-SearchBot, ClaudeBot,
-   PerplexityBot, Google-Extended, Applebot-Extended, CCBot), public/llms.txt per the spec.
-6. Empty placeholder page.tsx for /, /work, /work/easy-parking, /work/lapitopia, /about,
-   /contact — each exporting its own metadata.
-
-No page content yet. Report every file you created in one line each.
+```bash
+http://localhost:3000
 ```
 
-→ then `npm run build`
+## Useful scripts
 
-## Batch 2 — shell and home page
-
-```
-Continue following .github/copilot-instructions.md.
-
-1. components/Nav.tsx — 'use client', plain mobile menu, no library beyond framer-motion.
-2. components/Footer.tsx.
-3. components/Reveal.tsx — 'use client', the single motion wrapper, using only the allowed
-   values in the spec.
-4. components/CaseRow.tsx and components/Faq.tsx.
-5. app/page.tsx with the seven sections in the exact order given: hero, index rule, selected
-   work, what I do, offer, FAQ from site.faqs, contact CTA.
-
-Every animation goes through Reveal. No cards, no icons, no shadows, no gradients, no centred
-text, no banned Tailwind utility. Real copy, no placeholders. Report the files changed.
+```bash
+npm run dev
+npm run build
+npm run start
+npm run lint
 ```
 
-→ then `npm run build`, then look at it with `npm run dev`
+## Project structure
 
-## Batch 3 — work, about, contact, audit
+```text
+app/
+  globals.css
+  layout.tsx
+  page.tsx
+  about/page.tsx
+  contact/page.tsx
+  work/page.tsx
+  work/easy-parking/page.tsx
+  work/lapitopia/page.tsx
+  sitemap.ts
+  robots.ts
+  opengraph-image.tsx
+  not-found.tsx
 
+components/
+  Nav.tsx
+  Footer.tsx
+  Reveal.tsx
+  CaseRow.tsx
+  Faq.tsx
+  ContactForm.tsx
+
+lib/
+  site.ts
+  schema.ts
+
+public/
+  llms.txt
+  shots/easyparking.webp
+  shots/lapitopia.webp
 ```
-Continue following .github/copilot-instructions.md.
 
-1. app/work/page.tsx, app/work/easy-parking/page.tsx, app/work/lapitopia/page.tsx — each with
-   its own metadata, editorial layout with hairlines, stack in mono, outcome line, and the
-   screenshot at /shots/easyparking.webp or /shots/lapitopia.webp via next/image.
-   No invented metrics.
-2. app/about/page.tsx — three first-person paragraphs, states Pakistan and remote work plainly.
-3. app/contact/page.tsx plus components/ContactForm.tsx ('use client', Formspree, real labels,
-   client-side validation, no libraries).
+## Content and brand profile
 
-Then audit the whole project against the SEO, AEO/GEO and "Banned outright" sections of the spec.
-List every violation with file and line, fix the certain ones, and report what you changed.
+The site is designed around a specific positioning:
+- one developer, not a studio or agency
+- international and remote work
+- fixed-fee pricing model
+- direct communication, concise case studies, and low-friction contact
+
+Important content and metadata are intentionally kept factual and readable in the DOM, which also supports AI discovery and search visibility.
+
+## SEO and AEO notes
+
+The app includes:
+- metadataBase and per-page metadata
+- Open Graph and Twitter card metadata
+- canonical URLs
+- robots.txt rules for AI crawlers
+- sitemap entries
+- structured data for Person, WebSite, ProfessionalService, and FAQPage
+- llms.txt at the public root
+
+## Deployment
+
+The production site is deployed on Vercel and uses the domain:
+
+```text
+https://www.syedalihax.com
 ```
 
-→ then `npm run build`
+## Notes for contributors
 
----
+- Follow the design system defined in the project instructions and app globals.
+- Keep copy factual and specific.
+- Prefer server components by default.
+- Use the single motion wrapper in components/Reveal.tsx for animation.
+- Do not add unnecessary dependencies or design systems.
 
-## If something looks generated
+## Related specification
 
+The project is governed by the repo-level instructions in:
+
+```text
+.github/copilot-instructions.md
+AGENTS.md
 ```
-Re-read the "Tailwind utilities that are banned" and "Banned outright" sections of
-.github/copilot-instructions.md. List every place in the current code that violates them, with
-file and line, then fix them and nothing else.
-```
 
----
-
-## Deploy
-
-Vercel free tier, then point `syedalihax.com` at it. The domain is parked on Hostinger
-nameservers (`cosmos/nova.dns-parking.com`), apex A record `2.57.91.91`.
+Those files define the visual and business constraints for this portfolio.
