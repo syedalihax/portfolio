@@ -28,17 +28,19 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const title = "Syed Ali — websites for small business, fixed price";
+const description =
+  "Freelance web developer in Quetta. Fixes broken sites, builds one-page and five-page sites, fixed price and fixed date. Easy-Parking and LapToPia are live.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(url),
-  title: "Web Developer | Syed Ali",
-  description:
-    "Syed Ali is a web developer in Quetta, Pakistan, building and fixing websites remotely for clients worldwide.",
+  title,
+  description,
   openGraph: {
     type: "website",
     url,
-    title: "Web Developer | Syed Ali",
-    description:
-      "Website fixes and builds by Syed Ali, working remotely from Quetta, Pakistan.",
+    title,
+    description,
     siteName: `${name} — Web Developer`,
   },
   alternates: {

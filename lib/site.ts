@@ -4,9 +4,10 @@ export const email = "hello@syedalihax.com";
 export const phone = "+92 318 3179797";
 export const whatsappUrl = "https://wa.me/923183179797";
 export const formspreeEndpoint = "xyeeaaqq";
-export const positioning = "I fix and build websites small businesses can actually run.";
+export const positioning =
+  "I fix broken sites, build one-pagers, and hand over something you can update yourself. Fixed price, fixed date, no account managers.";
 export const location = "Quetta, Pakistan";
-export const availability = "Remote worldwide · replies within one working day";
+export const availability = "Remote worldwide";
 
 export const nav = [
   { label: "Home", href: "/" },
@@ -17,10 +18,10 @@ export const nav = [
 
 export const offer = [
   {
-    name: "Fix",
+    name: "Audit",
     price: 99,
     includes:
-      "One specific repair on an existing site — a broken enquiry form, a layout that fails on phones, or a page that will not load.",
+      "Full site check, three fixes, one working day. Credited against the build if you go ahead.",
     turnaround: "One working day",
   },
   {
@@ -31,7 +32,7 @@ export const offer = [
     turnaround: "Three days",
   },
   {
-    name: "Build plus",
+    name: "Build + booking",
     price: 499,
     includes:
       "Up to five pages, a booking or enquiry flow, a copywriting pass, deployed and handed over.",
@@ -41,9 +42,9 @@ export const offer = [
 
 export const faqs = [
   {
-    question: "What does the $99 fix include?",
+    question: "What does the $99 audit include?",
     answer:
-      "The $99 fix covers one specific problem on an existing site — a broken enquiry form, a layout that fails on phones, or a page that will not load — and I deliver it within one working day.",
+      "The $99 audit covers one specific issue on an existing site — a broken enquiry form, a layout that fails on mobile, or a page that will not load — and I deliver it within one working day.",
   },
   {
     question: "How fast can you turn around a build?",
@@ -53,16 +54,16 @@ export const faqs = [
   {
     question: "Do you work with clients outside Pakistan?",
     answer:
-      "Yes. I work remotely from Quetta and coordinate with clients across Australian, UK and Gulf time zones, replying within one working day.",
+      "I work remotely from Quetta and coordinate with clients in Australia, the UK and the Gulf. The timeline is set in writing before the build starts.",
   },
   {
     question: "What do you build with?",
     answer:
-      "I build with Next.js, TypeScript and Tailwind CSS, deploy on Vercel, and hand over the repository so you are not locked into me for later changes.",
+      "I build with Next.js, TypeScript and Tailwind CSS, deploy on Vercel, and hand over the repository so you can update it later without me.",
   },
   {
     question: "What do you need from me to start?",
     answer:
-      "A written description of the problem, any logins for the existing site, and one example of a site you like. Nothing else.",
+      "I need a short description of the problem, any logins for the existing site, and one example of a site you like. That is enough to quote the scope and date.",
   },
 ] as const;

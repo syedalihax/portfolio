@@ -67,9 +67,9 @@ export default function LapitopiaPage() {
               <section className="grid gap-3 border-t border-rule py-6 sm:grid-cols-[4fr_7fr] sm:gap-8">
                 <h2 className="font-mono text-meta text-muted">Problem</h2>
                 <p className="max-w-[62ch] text-body leading-relaxed text-ink">
-                  People looking for computer hardware need to browse product
-                  types including laptops, PCs, servers and miners in one
-                  storefront.
+                  Shoppers looking for laptops, PCs, servers and miners needed a
+                  storefront that was easy to browse and trust. I needed clear
+                  categories and a direct path to support.
                 </p>
               </section>
             </Reveal>
@@ -77,27 +77,27 @@ export default function LapitopiaPage() {
               <section className="grid gap-3 border-t border-rule py-6 sm:grid-cols-[4fr_7fr] sm:gap-8">
                 <h2 className="font-mono text-meta text-muted">What I built</h2>
                 <p className="max-w-[62ch] text-body leading-relaxed text-ink">
-                  I built a storefront with product search, category
-                  navigation, support contact information and a featured
-                  computer-systems section. The page introduces laptops, PCs,
-                  servers and mining systems as the main product groups.
+                  I built a storefront with product discovery, category
+                  navigation, featured systems and direct support contact. The
+                  catalogue feeds into a simple checkout and order admin flow.
                 </p>
               </section>
             </Reveal>
             <Reveal delay={0.12}>
               <section className="grid gap-3 border-t border-rule py-6 sm:grid-cols-[4fr_7fr] sm:gap-8">
-                <h2 className="font-mono text-meta text-muted">Stack</h2>
-                <p className="font-mono text-meta leading-relaxed text-ink">
-                  Next.js · TypeScript · Tailwind CSS
+                <h2 className="font-mono text-meta text-muted">Decision</h2>
+                <p className="max-w-[62ch] text-body leading-relaxed text-ink">
+                  I chose a search-first, category-led layout so customers could
+                  compare hardware quickly without losing context. It kept the
+                  catalogue simple enough to shop in a hurry.
                 </p>
               </section>
             </Reveal>
             <Reveal delay={0.18}>
               <section className="grid gap-3 border-y border-rule py-6 sm:grid-cols-[4fr_7fr] sm:gap-8">
-                <h2 className="font-mono text-meta text-muted">Outcome</h2>
-                <p className="max-w-[62ch] text-body leading-relaxed text-ink">
-                  Visitors can search for products and navigate from the
-                  storefront to the featured hardware categories.
+                <h2 className="font-mono text-meta text-muted">Stack</h2>
+                <p className="font-mono text-meta leading-relaxed text-ink">
+                  Next.js · TypeScript · Tailwind CSS
                 </p>
               </section>
             </Reveal>
