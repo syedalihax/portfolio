@@ -67,9 +67,9 @@ export default function EasyParkingPage() {
               <section className="grid gap-3 border-t border-rule py-6 sm:grid-cols-[4fr_7fr] sm:gap-8">
                 <h2 className="font-mono text-meta text-muted">Problem</h2>
                 <p className="max-w-[62ch] text-body leading-relaxed text-ink">
-                  A parking operator needs to keep track of monthly members,
-                  walk-in parking and unpaid dues without losing each
-                  vehicle&apos;s billing history.
+                  Parking operators tracked monthly members, walk-ins and unpaid
+                  dues on paper. I needed one system that kept each vehicle&apos;s
+                  billing history and balances accurate.
                 </p>
               </section>
             </Reveal>
@@ -77,28 +77,27 @@ export default function EasyParkingPage() {
               <section className="grid gap-3 border-t border-rule py-6 sm:grid-cols-[4fr_7fr] sm:gap-8">
                 <h2 className="font-mono text-meta text-muted">What I built</h2>
                 <p className="max-w-[62ch] text-body leading-relaxed text-ink">
-                  I built a parking register interface with views for members,
-                  monthly dues, daily parking and payments. The monthly dues
-                  table shows billed amounts, payments, balances and payment
-                  status for each listed member.
+                  I built a dues register for monthly members, daily parking and
+                  payments. It groups vehicle data, charges, balances and status
+                  in one workflow.
                 </p>
               </section>
             </Reveal>
             <Reveal delay={0.12}>
               <section className="grid gap-3 border-t border-rule py-6 sm:grid-cols-[4fr_7fr] sm:gap-8">
-                <h2 className="font-mono text-meta text-muted">Stack</h2>
-                <p className="font-mono text-meta leading-relaxed text-ink">
-                  Next.js · TypeScript · Tailwind CSS
+                <h2 className="font-mono text-meta text-muted">Decision</h2>
+                <p className="max-w-[62ch] text-body leading-relaxed text-ink">
+                  I kept the rate card tied to each vehicle type, so a rate
+                  change never overwrites past records. That kept historical
+                  billing accurate and easy to audit.
                 </p>
               </section>
             </Reveal>
             <Reveal delay={0.18}>
               <section className="grid gap-3 border-y border-rule py-6 sm:grid-cols-[4fr_7fr] sm:gap-8">
-                <h2 className="font-mono text-meta text-muted">Outcome</h2>
-                <p className="max-w-[62ch] text-body leading-relaxed text-ink">
-                  Monthly charges, payments and remaining balances can be
-                  reviewed together in the dues table, with unpaid amounts
-                  visible alongside each member.
+                <h2 className="font-mono text-meta text-muted">Stack</h2>
+                <p className="font-mono text-meta leading-relaxed text-ink">
+                  Next.js · TypeScript · Tailwind CSS
                 </p>
               </section>
             </Reveal>

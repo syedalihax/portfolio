@@ -6,11 +6,7 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Reveal from "../components/Reveal";
 import {
-  availability,
   email,
-  faqs,
-  location,
-  name,
   offer,
   phone,
   positioning,
@@ -18,9 +14,9 @@ import {
   whatsappUrl,
 } from "../lib/site";
 
-const title = "Web Developer | Syed Ali";
+const title = "Syed Ali — websites for small business, fixed price";
 const description =
-  "Syed Ali fixes and builds websites for small businesses, working remotely from Quetta, Pakistan.";
+  "Freelance web developer in Quetta. Fixes broken sites, builds one-page and five-page sites, fixed price and fixed date. Easy-Parking and LapToPia are live.";
 
 export const metadata: Metadata = {
   title,
@@ -71,9 +67,9 @@ const work = [
 
 const services = [
   {
-    label: "Fix",
+    label: "Audit",
     description:
-      "I repair one specific issue in an existing website, from a broken enquiry form to a page that will not load.",
+      "I check a live site for the issue you are already seeing, then repair the root cause and ship it quickly.",
   },
   {
     label: "Build",
@@ -81,7 +77,7 @@ const services = [
       "I make a one-page site with a hero, services, contact form and Google Business Profile, then deploy and hand it over.",
   },
   {
-    label: "Build plus",
+    label: "Build + booking",
     description:
       "I make up to five pages with a booking or enquiry flow and a copywriting pass, then deploy and hand it over.",
   },
@@ -99,17 +95,34 @@ export default function HomePage() {
             aria-labelledby="home-title"
             className="py-[calc(var(--spacing-section)/2)]"
           >
+            <p className="font-mono text-meta uppercase tracking-[0.18em] text-muted">
+              Syed Ali — web developer · Quetta, Pakistan
+            </p>
             <h1
               id="home-title"
-              className="font-display text-display leading-[0.98] text-ink"
+              className="mt-6 max-w-[12ch] font-display text-display leading-[0.98] text-ink"
             >
-              {name}
+              Websites small businesses can actually run.
             </h1>
-            <p className="mt-6 max-w-[62ch] text-body leading-relaxed text-ink">
+            <p className="mt-6 max-w-[54ch] text-[1.15rem] leading-relaxed text-ink">
               {positioning}
             </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a
+                href="#offer"
+                className="inline-flex items-center justify-center bg-ink px-5 py-3 font-mono text-meta text-paper underline-offset-4 transition-colors hover:text-ink"
+              >
+                See pricing
+              </a>
+              <a
+                href={whatsappUrl}
+                className="inline-flex items-center justify-center font-mono text-meta text-ink underline decoration-rule underline-offset-4"
+              >
+                WhatsApp me
+              </a>
+            </div>
             <p className="mt-4 font-mono text-meta text-muted">
-              {location} · {availability}
+              Easy-Parking and LapToPia are both live — built end to end.
             </p>
           </section>
         </Reveal>
@@ -178,28 +191,41 @@ export default function HomePage() {
               These are my founding rates for clearly scoped website work.
             </p>
           </Reveal>
+          <div className="mt-8 grid gap-3 border-t border-rule pt-5 md:grid-cols-3">
+            <p className="font-mono text-meta text-muted">01 Send the URL</p>
+            <p className="font-mono text-meta text-muted">
+              02 Fixed quote in one day
+            </p>
+            <p className="font-mono text-meta text-muted">
+              03 Live on the agreed date
+            </p>
+          </div>
           <dl className="mt-8">
             {offer.map((tier, index) => (
               <Reveal key={tier.name} delay={index * 0.06}>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-3 border-t border-rule py-5 md:grid-cols-[1fr_2fr_1fr_auto] md:items-start md:gap-8">
-                  <dt className="font-display text-h2 text-ink">
-                    {tier.name}
-                  </dt>
-                  <dd className="font-mono text-meta text-accent md:col-start-4 md:row-start-1">
-                    ${tier.price} USD
-                  </dd>
-                  <dd className="col-span-2 max-w-[62ch] text-body leading-relaxed text-muted md:col-span-1 md:col-start-2 md:row-start-1">
+                <div className="grid gap-4 border-t border-rule py-6 md:grid-cols-[1.2fr_1fr] md:items-end md:gap-8">
+                  <div>
+                    <dt className="text-body text-ink">{tier.name}</dt>
+                    <dd className="mt-2 font-mono text-meta text-muted">
+                      {tier.turnaround}
+                    </dd>
+                  </div>
+                  <div className="md:text-right">
+                    <dd className="font-display text-[2.5rem] leading-none text-ink md:text-[3.25rem]">
+                      ${tier.price}
+                    </dd>
+                  </div>
+                  <dd className="col-span-full max-w-[62ch] text-body leading-relaxed text-muted">
                     {tier.includes}
-                  </dd>
-                  <dd className="font-mono text-meta text-muted md:col-start-3 md:row-start-1">
-                    <span className="md:hidden">Turnaround · </span>
-                    {tier.turnaround}
                   </dd>
                 </div>
               </Reveal>
             ))}
             <div className="border-t border-rule" />
           </dl>
+          <p className="mt-4 font-mono text-meta text-muted">
+            Prices in USD, fixed. No hourly billing, no lock-in.
+          </p>
         </section>
 
         <section
@@ -223,27 +249,36 @@ export default function HomePage() {
           >
             <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
               <div className="lg:col-span-4">
-                <h2 id="contact-title" className="font-display text-h2 text-ink">
-              Contact
+                <h2
+                  id="contact-title"
+                  className="font-display text-[2.4rem] leading-none text-ink md:text-[2.8rem]"
+                >
+                  Contact
                 </h2>
                 <p className="mt-4 max-w-[62ch] text-body leading-relaxed text-muted">
                   I reply within one working day.
                 </p>
                 <a
                   href={`mailto:${email}`}
-                  className="mt-5 inline-block font-mono text-meta text-ink"
+                  className="mt-5 inline-block font-mono text-meta text-ink underline decoration-rule underline-offset-4"
                 >
                   {email}
                 </a>
                 <a
                   href={whatsappUrl}
-                  className="mt-3 block font-mono text-meta text-ink"
+                  className="mt-3 block font-mono text-meta text-ink underline decoration-rule underline-offset-4"
                   aria-label={`WhatsApp: ${phone}`}
                 >
                   WhatsApp · {phone}
                 </a>
               </div>
               <div className="lg:col-span-6 lg:col-start-6">
+                <div
+                  data-testimonial="placeholder"
+                  aria-label="Testimonial placeholder"
+                  className="mb-8 border-t border-rule pb-6"
+                  aria-hidden="true"
+                />
                 <ContactForm />
               </div>
             </div>
