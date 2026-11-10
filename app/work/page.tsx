@@ -55,7 +55,7 @@ export default function WorkPage() {
           {projects.map((project, index) => (
             <section
               key={project.name}
-              className={index % 2 === 0 ? "band-paper" : "band-sand"}
+              className={index === 0 ? "band-sand" : "band-paper"}
             >
               <div className="mx-auto w-full max-w-[1360px] py-[clamp(56px,7vw,90px)]">
                 <CaseRow
@@ -69,17 +69,6 @@ export default function WorkPage() {
             </section>
           ))}
         </div>
-
-        <section className="band-clay">
-          <div className="mx-auto w-full max-w-[1360px] px-[clamp(20px,4vw,56px)] py-[clamp(88px,10vw,140px)]">
-            <a
-              href="/contact"
-              className="inline-flex min-h-[46px] items-center justify-center border border-[var(--ink)] bg-[var(--ink)] px-5 font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--paper)]"
-            >
-              Start a project
-            </a>
-          </div>
-        </section>
       </main>
 
       <Footer />
