@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     url: `${url}/contact`,
     title,
     description,
+    images: [new URL("/opengraph-image", url).toString()],
   },
   alternates: {
     canonical: `${url}/contact`,

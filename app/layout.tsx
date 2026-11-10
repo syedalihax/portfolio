@@ -30,7 +30,7 @@ const jetBrainsMono = JetBrains_Mono({
 
 const title = "Syed Ali — websites for small business, fixed price";
 const description =
-  "Freelance web developer in Quetta. Fixes broken sites, builds one-page and five-page sites, fixed price and fixed date. Easy-Parking and LapToPia are live.";
+  "Freelance web developer in Quetta. Fixes broken sites and builds one- to five-page websites, fixed price and fixed date. Easy-Parking and LapToPia are live.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -42,6 +42,13 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: `${name} — Web Developer`,
+    images: [new URL("/opengraph-image", url).toString()],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [new URL("/opengraph-image", url).toString()],
   },
   alternates: {
     canonical: url,
