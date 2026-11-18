@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #f5f6f8;
+    color: #14171c;
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: #f5f6f8;
+    color: #14171c;
+    font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: rgba(37, 99, 235, 0.16);
+    color: #14171c;
+  }
+}
+
+@keyframes skill-card-reveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.skill-card-reveal {
+  animation: skill-card-reveal 500ms ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .skill-card-reveal {
+    animation: none;
+  }
+}
