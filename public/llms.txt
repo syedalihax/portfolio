@@ -1,0 +1,21 @@
+# Syed Ali Hax
+
+> Portfolio of Syed Ali, a software engineer who builds websites, web applications, and React Native mobile apps.
+
+## Main pages
+
+- [Home](https://www.syedalihax.com/): Overview, selected work, services, pricing, process, and contact options.
+- [Projects](https://www.syedalihax.com/projects): Project details and screenshots.
+- [Services and pricing](https://www.syedalihax.com/services): Services, starting prices, and project process.
+- [About](https://www.syedalihax.com/about): Background and technologies.
+- [Contact](https://www.syedalihax.com/contact): Contact details and inquiry form.
+
+## Selected projects
+
+- Laptopia: Concept full-stack e-commerce application.
+- EasyParking: Parking management web application and PWA.
+- Iftikhari Hall: Local business website built for a real client.
+
+## Contact
+
+- Email: syedalihax@gmail.com
