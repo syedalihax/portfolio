@@ -34,9 +34,42 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio of Syed Ali, a Software Engineer with 1+ years of experience building responsive websites, landing pages, full-stack web applications, and React Native mobile apps.",
+  keywords: [
+    "Syed Ali",
+    "software engineer",
+    "Next.js developer",
+    "React developer",
+    "React Native developer",
+    "web developer",
+    "Pakistan software engineer",
+  ],
+  authors: [{ name: SITE_INFO.name, url: SITE_INFO.url }],
+  creator: SITE_INFO.name,
+  publisher: SITE_INFO.name,
+  category: "technology",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
+    languages: { "en-PK": "/" },
+  },
   openGraph: {
     type: "website",
+    locale: "en_US",
     siteName: "Syed Ali Hax",
+    url: SITE_INFO.url,
+    title: "Syed Ali Hax | Software Engineer",
+    description:
+      "Software engineering portfolio for responsive websites, full-stack web applications, and React Native mobile apps.",
     images: [
       {
         url: "/assets/aistudio/laptopia-1_c6c9f4c8.png",
@@ -48,6 +81,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Syed Ali Hax | Software Engineer",
+    description:
+      "Responsive websites, full-stack applications, and React Native mobile apps.",
     images: ["/assets/aistudio/laptopia-1_c6c9f4c8.png"],
   },
 };
@@ -83,8 +119,14 @@ export default function RootLayout({
     "@type": "WebSite",
     name: `${SITE_INFO.name} — ${SITE_INFO.title}`,
     url: SITE_INFO.url,
+    inLanguage: "en-PK",
     description:
       "Personal portfolio of Syed Ali, Software Engineer building websites, web applications, and mobile applications.",
+    publisher: {
+      "@type": "Person",
+      name: SITE_INFO.name,
+      url: SITE_INFO.url,
+    },
   };
 
   return (

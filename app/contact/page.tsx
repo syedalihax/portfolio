@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description:
     "Contact Syed Ali about a website, web application, mobile app, or other software project.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Syed Ali",
+    description:
+      "Start a conversation about a website, web application, or React Native mobile project.",
+    url: "/contact",
+  },
 };
 
 export default async function ContactPage({
