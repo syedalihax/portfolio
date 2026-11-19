@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   description:
     "Meet Syed Ali, a software engineer building responsive websites, web applications, and React Native mobile apps.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Syed Ali Hax | Software Engineer Portfolio",
+    description:
+      "Explore selected web, full-stack, and React Native projects by Syed Ali.",
+    url: "/",
+  },
+  twitter: {
+    title: "Syed Ali Hax | Software Engineer Portfolio",
+    description:
+      "Explore selected web, full-stack, and React Native projects by Syed Ali.",
+  },
 };
 
 export default function HomePage() {

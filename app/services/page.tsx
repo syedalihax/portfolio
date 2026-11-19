@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description:
     "Review Syed Ali's website, web application, and mobile app services, starting prices, and project process.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Web and Mobile Development Services",
+    description:
+      "Website, web application, React Native, pricing, and project process details.",
+    url: "/services",
+  },
 };
 
 export default function ServicesPage() {
